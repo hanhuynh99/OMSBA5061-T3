@@ -7,6 +7,7 @@ Only print out the integers in the given range that are perfect squares (1, 4, 9
 Authors: Melinda Davis
 ChangeLog (Who,When,What):
 MDavis, 10-03-2022, Created Script
+Added inner loop to statement to determine square root and only print variables that satisfy that requirement
 '''
 
 # Get user input
@@ -18,8 +19,10 @@ if low_num > high_num:
     (low_num, high_num) = (high_num, low_num)
 
 # While loop to iterate through the numbers and print them out
-while low_num <= high_num:
-    print(low_num)
+while low_num <= high_num: # While loop will continue through the high_number assigned
+    while low_num**0.5 == int(low_num**0.5): # while loop filters out square roots that are integers
+        print(low_num)
+        low_num += 1
     low_num += 1
 
-input("Please hit enter to quit the program.")
+input("Please press enter to quit the program.")
